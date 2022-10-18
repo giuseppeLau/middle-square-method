@@ -9,21 +9,20 @@ string middleSquareMethod(int seed) {
 	int seedLength = str.length();			//Stores in a variable the number of digits
 	
 	if ((seedLength%2)!=0) {			//Correction in case the seed has an odd number of digits
-        	str.insert(0, "0"); 			//Adding a 0 at the beginning of the string 
-        	seedLength += 1;			//Increse of lenght variable
-    	}
+        	seedLength += 1;			//The length of the variable will be increased by one as
+    	}						//if a 0 is inserted at the beginning of the seed (ex 540 -> 0540)
 
 	string sqrStr = to_string(seed*seed);		//Conversion of the square of the root from int to string
-
+	
     	while(sqrStr.length() < seedLength*2)		//Checks that the number of digits of the square of the seed is at least 2*seedLenght
-		sqrStr.insert(0, "0");			//(algorithm requirement) otherwise a padding of zeros is added									
+    		sqrStr.insert(0, "0");			//(algorithm requirement) otherwise a padding of zeros is added									
 
-	string result = "";				//Result Generation
+	str = "";					//Result Generation
 
 	for (int i = sqrStr.length()/4; i < (sqrStr.length()/2)+(sqrStr.length()/4); i++) 
-		result += sqrStr.at(i);
+		str += sqrStr.at(i);
 	
-	return result;
+	return str;
 }
 
 void iterativeMiddleSquareMethod(int seed, int num){
