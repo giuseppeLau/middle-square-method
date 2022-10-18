@@ -20,12 +20,9 @@ string middleSquareMethod(int seed) {
 
 	string result = "";				//Result Generation
 
-	for (int i = sqrStr.length()/4; i < sqrStr.length()/2; i++) 
+	for (int i = sqrStr.length()/4; i < (sqrStr.length()/2)+(sqrStr.length()/4); i++) 
 		result += sqrStr.at(i);
 	
-	for (int i = sqrStr.length()/2; i < (sqrStr.length()/2)+(sqrStr.length()/4); i++) 
-		result += sqrStr.at(i);
-
 	return result;
 }
 
